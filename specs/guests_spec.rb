@@ -8,6 +8,7 @@ class TestGuests < MiniTest::Test
   def setup
     @guest_1 = Guest.new("Cookie", "Wannabe")
     @guest_2 = Guest.new("Paul", "The Night They Drove Old Dixie Down")
+    @guest_3 = Guest.new("Martin", "The River")
   end
 
   def test_guest_has_name
