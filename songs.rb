@@ -7,4 +7,5 @@ def initialize(title, artist)
   @artist = artist
 end
 
+
 end
