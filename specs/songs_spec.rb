@@ -12,4 +12,8 @@ class TestSongs < Minitest::Test
     assert_equal("The River", @song_1.title)
   end
 
+  def test_song_has_artist
+    assert_equal("Bruce Springsteen", @song_1.artist)
+  end
+
 end
