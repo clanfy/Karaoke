@@ -6,6 +6,9 @@ class TestSongs < Minitest::Test
 
   def setup
     @song_1 = Song.new("The River", "Bruce Springsteen")
+    @song_2 = Song.new("Wannabe", "The Spice Girls")
+    @song_3 = Song.new("The Night They Drove Old Dixie Down","The Band")
+    @song_4 = Song.new("YMCA", "Village People")
   end
 
   def test_song_has_title
@@ -13,7 +16,7 @@ class TestSongs < Minitest::Test
   end
 
   def test_song_has_artist
-    assert_equal("Bruce Springsteen", @song_1.artist)
+    assert_equal("The Spice Girls", @song_2.artist)
   end
 
 end
