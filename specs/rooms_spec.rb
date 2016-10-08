@@ -38,9 +38,9 @@ def test_room_has_name
   assert_equal("Posh", @room_5.name)
 end
 
-# def test_5_rooms
-#   assert_equal(5, @rooms.count)
-# end
+def test_5_rooms
+  assert_equal(5, @rooms.count)
+end
 
 
 
