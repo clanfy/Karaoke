@@ -1,7 +1,9 @@
 class KaraokeBar
 
-def initialize(input_rooms)
-  @rooms = input_rooms
+  attr_reader :rooms
+
+def initialize(rooms)
+  @rooms = rooms
 end
 
 end
