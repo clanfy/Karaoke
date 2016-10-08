@@ -52,6 +52,12 @@ def test_can_check_in_multiple_guests
   assert_equal(["Cookie", "Paul", "Martin"], checked_in_guests)
 end
 
+def test_can_check_out_guests
+  @room_1.check_in(@guests)
+  check_out = @room_1.check_out("Paul")
+  assert_equal(["Cookie", "Martin"], check_out)
+
+end
 
 
 
