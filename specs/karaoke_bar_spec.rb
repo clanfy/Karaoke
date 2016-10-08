@@ -29,8 +29,8 @@ def setup
 @room_4 = Room.new("Sporty", song_list)
 @room_5 = Room.new("Posh", song_list)
 
-@rooms = [@room_1, @room_2, @room_3, @room_4, @room_5]
+rooms = [@room_1, @room_2, @room_3, @room_4, @room_5]
 
-
+@karaoke_bar = KaraokeBar.new(rooms)
 
 end 

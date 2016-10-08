@@ -23,5 +23,9 @@ class TestSongs < Minitest::Test
     assert_equal("The Spice Girls", @song_2.artist)
   end
 
+  def test_song_list_has_5_songs
+    assert_equal(5, @song_list.count)
+  end
+
 
 end
