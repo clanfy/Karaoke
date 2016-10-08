@@ -42,6 +42,10 @@ def test_5_rooms
   assert_equal(5, @rooms.count)
 end
 
+def test_can_check_in_1_guest
+  checked_in = @room_1.check_in(@guest_1)
+  assert_equal(["Cookie"], checked_in)
+end
 
 
 

@@ -8,6 +8,8 @@ class Room
     @guests = []
   end
 
-
+def check_in(guest)
+  return @guests << guest.name
+end
 
 end
