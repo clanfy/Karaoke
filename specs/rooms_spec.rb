@@ -56,9 +56,12 @@ def test_can_check_out_guests
   @room_1.check_in(@guests)
   check_out = @room_1.check_out("Paul")
   assert_equal(["Cookie", "Martin"], check_out)
-
 end
 
+def test_can_add_songs_to_room
+  song_added = @room_1.add_song(@song_1)
+  assert_equal("The River by Bruce Springsteen", song_added)
+end
 
 
 end

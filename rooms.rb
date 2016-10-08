@@ -18,4 +18,8 @@ class Room
     return @guests_room
   end
 
+  def add_song(song)
+    return "#{song.title} by #{song.artist}"
+  end
+
 end
