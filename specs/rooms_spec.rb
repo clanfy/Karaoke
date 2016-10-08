@@ -3,6 +3,7 @@ require('minitest/rg')
 require('pry-byebug')
 require_relative('../rooms')
 require_relative('../songs')
+require_relative('../guests')
 
 
 class TestRoom < MiniTest::Test
@@ -17,6 +18,11 @@ class TestRoom < MiniTest::Test
 
     @songs = [@song_1, @song_2, @song_3, @song_4, @song_5]
 
+    @guest_1 = Guest.new("Cookie", "Wannabe")
+    @guest_2 = Guest.new("Paul", "The Night They Drove Old Dixie Down")
+    @guest_3 = Guest.new("Martin", "The River")
+
+    @guests = [@guest_1, @guest_2, @guest_3]
 
     @room_1 = Room.new("Scary", @songs)
     @room_2 = Room.new("Ginger", @songs)
