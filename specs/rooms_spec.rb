@@ -72,4 +72,11 @@ def test_add_guests_to_occupied_room
   assert_equal(["Cookie", "Paul", "Martin", "Carlson"], room_full)
 end
 
+def test_room_full
+  occupied_room = @room_1.check_in(@guests_group_2)
+  room_full = occupied_room + @room_1.check_in([@guest_4])
+  room_reject = room_full + @room_1.check_in([@guest_5])
+  assert_equal("Sorry, room full!", @room_1.sorry_room_full(room_reject))
+end
+
 end

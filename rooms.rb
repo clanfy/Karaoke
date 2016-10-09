@@ -22,4 +22,13 @@ class Room
     return "#{song.title} by #{song.artist} added."
   end
 
+  def sorry_room_full(guests)
+    if guests.count > 4
+      guests.pop
+      return "Sorry, room full!" 
+    else
+      return "Happy singing!"
+    end
+  end
+
 end
