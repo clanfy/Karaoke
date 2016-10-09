@@ -1,6 +1,6 @@
 class Guest
 
-  attr_reader :name, :fave_song
+  attr_accessor :name, :fave_song
 
   def initialize(name, fave_song, money)
     @name = name
@@ -10,6 +10,12 @@ class Guest
 
   def money
     return @money
+  end
+
+  def skint_guest
+    if guest.money < 20
+      return guest.money
+    end
   end
 
 end

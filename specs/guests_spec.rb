@@ -10,7 +10,7 @@ class TestGuests < MiniTest::Test
     @guest_2 = Guest.new("Paul", "The Night They Drove Old Dixie Down", 150)
     @guest_3 = Guest.new("Martin", "The River", 200)
     @guest_4 = Guest.new("Carlson", "Recognize ft. Drake", 100)
-    @guest_5 = Guest.new("Pants", "YMCA", 50)
+    @guest_5 = Guest.new("Pants", "YMCA", 15)
   end
 
   def test_guest_has_name
@@ -24,5 +24,10 @@ class TestGuests < MiniTest::Test
   def test_guest_has_money
     assert_equal(100, @guest_1.money)
   end 
+
+  def test_not_enough_money
+    sad_guest = skint_guest(@guest_5)
+    assert_equal("Sorry, the entry fee is £20", sad_guest)
+  end
 
 end

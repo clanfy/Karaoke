@@ -79,4 +79,6 @@ def test_room_full
   assert_equal("Sorry, room full!", @room_1.sorry_room_full(room_reject))
 end
 
+
+
 end
