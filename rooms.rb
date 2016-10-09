@@ -19,7 +19,7 @@ class Room
   end
 
   def add_song(song)
-    return "#{song.title} by #{song.artist}"
+    return "#{song.title} by #{song.artist} added."
   end
 
 end

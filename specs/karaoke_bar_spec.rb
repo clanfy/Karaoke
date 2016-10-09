@@ -20,8 +20,10 @@ class TestKaraokeBar < MiniTest::Test
     @guest_1 = Guest.new("Cookie", "Wannabe", 100)
     @guest_2 = Guest.new("Paul", "The Night They Drove Old Dixie Down", 150)
     @guest_3 = Guest.new("Martin", "The River", 200)
+    @guest_4 = Guest.new("Carlson", "Recognize ft. Drake", 100)
+    @guest_5 = Guest.new("Pants", "YMCA", 50)
 
-    @guests = [@guest_1, @guest_2, @guest_3]
+    @guests = [@guest_1, @guest_2, @guest_3, @guest_4, @guest_5]
 
     @room_1 = Room.new("Scary", @songs)
     @room_2 = Room.new("Ginger", @songs)

@@ -18,11 +18,14 @@ class TestRoom < MiniTest::Test
 
     @songs = [@song_1, @song_2, @song_3, @song_4, @song_5]
 
-    @guest_1 = Guest.new("Cookie", "Wannabe")
-    @guest_2 = Guest.new("Paul", "The Night They Drove Old Dixie Down")
-    @guest_3 = Guest.new("Martin", "The River")
+    @guest_1 = Guest.new("Cookie", "Wannabe", 100)
+    @guest_2 = Guest.new("Paul", "The Night They Drove Old Dixie Down", 150)
+    @guest_3 = Guest.new("Martin", "The River", 200)
+    @guest_4 = Guest.new("Carlson", "Recognize ft. Drake", 100)
+    @guest_5 = Guest.new("Pants", "YMCA", 50)
 
-    @guests = [@guest_1, @guest_2, @guest_3]
+    @guests = [@guest_1, @guest_2, @guest_3, @guest_4, @guest_5]
+    @guests_group_2 = [@guest_1, @guest_2, @guest_3]
 
     @room_1 = Room.new("Scary", @songs)
     @room_2 = Room.new("Ginger", @songs)
@@ -49,19 +52,24 @@ end
 
 def test_can_check_in_multiple_guests
   checked_in_guests = @room_1.check_in(@guests)
-  assert_equal(["Cookie", "Paul", "Martin"], checked_in_guests)
+  assert_equal(["Cookie", "Paul", "Martin", "Carlson", "Pants"], checked_in_guests)
 end
 
 def test_can_check_out_guests
   @room_1.check_in(@guests)
   check_out = @room_1.check_out("Paul")
-  assert_equal(["Cookie", "Martin"], check_out)
+  assert_equal(["Cookie", "Martin", "Carlson", "Pants"], check_out)
 end
 
 def test_can_add_songs_to_room
   song_added = @room_1.add_song(@song_1)
-  assert_equal("The River by Bruce Springsteen", song_added)
+  assert_equal("The River by Bruce Springsteen added.", song_added)
 end
 
+def test_add_guests_to_occupied_room
+  occupied_room = @room_1.check_in(@guests_group_2)
+  room_full = occupied_room + @room_1.check_in([@guest_4])
+  assert_equal(["Cookie", "Paul", "Martin", "Carlson"], room_full)
+end
 
 end
